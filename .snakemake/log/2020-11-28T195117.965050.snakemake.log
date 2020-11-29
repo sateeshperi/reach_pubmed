@@ -1,0 +1,80 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 32
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	fetch_nxml
+	1
+
+[Sat Nov 28 19:51:18 2020]
+rule fetch_nxml:
+    output: output/PMC4894337, output/PMC5617106, output/PMC6134338, output/PMC6139384, output/PMC6169728, output/PMC6169731, output/PMC6169733, output/PMC6171558, output/PMC6198259, output/PMC6202282, output/PMC6281813, output/PMC6291384, output/PMC6292507, output/PMC6292746, output/PMC6292748, output/PMC6309767, output/PMC6310669, output/PMC6310680, output/PMC6344327, output/PMC6367065, output/PMC6367070, output/PMC6375806, output/PMC6377864, output/PMC6378130, output/PMC6378138, output/PMC6378141, output/PMC6382596, output/PMC6406176, output/PMC6428621, output/PMC6445783, output/PMC6447473, output/PMC6447479, output/PMC6478563, output/PMC6482106, output/PMC6494706, output/PMC6520219, output/PMC6536363, output/PMC6542726, output/PMC6544076, output/PMC6548676, output/PMC6551303, output/PMC6588504, output/PMC6600864, output/PMC6601426, output/PMC6609505, output/PMC6609509, output/PMC6616020, output/PMC6629527, output/PMC6639158, output/PMC6661224, output/PMC6663662, output/PMC6664352, output/PMC6667324, output/PMC6669124, output/PMC6675676, output/PMC6682472, output/PMC6685773, output/PMC6685929, output/PMC6692256
+    jobid: 0
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 8 of /home/jovyan/reach_pubmed/Snakefile:
+Missing files after 5 seconds:
+output/PMC4894337
+output/PMC5617106
+output/PMC6134338
+output/PMC6139384
+output/PMC6169728
+output/PMC6169731
+output/PMC6169733
+output/PMC6171558
+output/PMC6198259
+output/PMC6202282
+output/PMC6281813
+output/PMC6291384
+output/PMC6292507
+output/PMC6292746
+output/PMC6292748
+output/PMC6309767
+output/PMC6310669
+output/PMC6310680
+output/PMC6344327
+output/PMC6367065
+output/PMC6367070
+output/PMC6375806
+output/PMC6377864
+output/PMC6378130
+output/PMC6378138
+output/PMC6378141
+output/PMC6382596
+output/PMC6406176
+output/PMC6428621
+output/PMC6445783
+output/PMC6447473
+output/PMC6447479
+output/PMC6478563
+output/PMC6482106
+output/PMC6494706
+output/PMC6520219
+output/PMC6536363
+output/PMC6542726
+output/PMC6544076
+output/PMC6548676
+output/PMC6551303
+output/PMC6588504
+output/PMC6600864
+output/PMC6601426
+output/PMC6609505
+output/PMC6609509
+output/PMC6616020
+output/PMC6629527
+output/PMC6639158
+output/PMC6661224
+output/PMC6663662
+output/PMC6664352
+output/PMC6667324
+output/PMC6669124
+output/PMC6675676
+output/PMC6682472
+output/PMC6685773
+output/PMC6685929
+output/PMC6692256
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/jovyan/reach_pubmed/.snakemake/log/2020-11-28T195117.965050.snakemake.log
