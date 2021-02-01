@@ -1,0 +1,17 @@
+# Snakemake workflow to fetch pubmed open-acess nxml files
+
+file = open("2020_Jan")
+PAPERS = file.read().splitlines()
+file.close()
+
+rule all:
+    input:
+        expand("{paper}.nxml", paper = PAPERS)
+
+rule fetch_nxml:
+    params:
+        p="{paper}"
+    output:
+        "{paper}.nxml"
+    shell:
+        "python3 fetch_nxml.py --pmcids {params.p}"

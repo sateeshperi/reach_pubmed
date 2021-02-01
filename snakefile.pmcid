@@ -1,0 +1,59 @@
+# Snakemake workflow to fetch pubmed PMCIDs
+
+rule all:
+    input:
+        "oa_file_list.txt",
+        "2020_Dec",
+        "2020_paper_count.txt"
+
+rule wget_oa:
+    output:
+        "oa_file_list.txt"
+    shell:
+        "wget https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_file_list.txt"
+        
+rule grep_oa:
+    input:
+        "oa_file_list.txt"
+    output:
+        "2020_Dec"
+    shell:
+        """
+        grep ". 2020 Jan" oa_file_list.txt | cut -f 3 > 2020_Jan &&
+        grep ". 2020 Feb" oa_file_list.txt | cut -f 3 > 2020_Feb &&
+        grep ". 2020 Mar" oa_file_list.txt | cut -f 3 > 2020_Mar &&
+        grep ". 2020 Apr" oa_file_list.txt | cut -f 3 > 2020_Apr &&
+        grep ". 2020 May" oa_file_list.txt | cut -f 3 > 2020_May &&
+        grep ". 2020 Jun" oa_file_list.txt | cut -f 3 > 2020_Jun &&
+        grep ". 2020 Jul" oa_file_list.txt | cut -f 3 > 2020_Jul &&
+        grep ". 2020 Aug" oa_file_list.txt | cut -f 3 > 2020_Aug &&
+        grep ". 2020 Sep" oa_file_list.txt | cut -f 3 > 2020_Sep &&
+        grep ". 2020 Oct" oa_file_list.txt | cut -f 3 > 2020_Oct &&
+        grep ". 2020 Nov" oa_file_list.txt | cut -f 3 > 2020_Nov &&
+        grep ". 2020 Dec" oa_file_list.txt | cut -f 3 > 2020_Dec
+        """
+        
+rule paper_count:
+    input:
+        "2020_Dec"
+    output:
+        "2020_paper_count.txt"
+    shell:
+        """
+        wc -l 2020_Jan > 2020_paper_count.txt &&
+        wc -l 2020_Feb >> 2020_paper_count.txt &&
+        wc -l 2020_Mar >> 2020_paper_count.txt &&
+        wc -l 2020_Apr >> 2020_paper_count.txt &&
+        wc -l 2020_May >> 2020_paper_count.txt &&
+        wc -l 2020_Jun >> 2020_paper_count.txt &&
+        wc -l 2020_Jul >> 2020_paper_count.txt &&
+        wc -l 2020_Aug >> 2020_paper_count.txt &&
+        wc -l 2020_Sep >> 2020_paper_count.txt &&
+        wc -l 2020_Oct >> 2020_paper_count.txt &&
+        wc -l 2020_Nov >> 2020_paper_count.txt &&
+        wc -l 2020_Dec >> 2020_paper_count.txt
+        """        
+        
+        
+        
+    
